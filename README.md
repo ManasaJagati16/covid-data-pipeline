@@ -99,3 +99,11 @@ Integrating cloud services into reproducible pipelines
 
 Preparing clean, query-ready datasets for downstream use
 
+---
+
+## Snowflake Output
+
+Below is a sample output after loading and querying the data from Snowflake:
+
+![Snowflake Output](images/snowflake_output.png)
+
