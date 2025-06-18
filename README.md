@@ -1,12 +1,12 @@
 # COVID-19 Data Pipeline with S3 and Snowflake
 
-This project demonstrates a real-time data pipeline that extracts COVID-19 data from a public API, stores it in AWS S3, and loads it into Snowflake for analytics — built entirely using free-tier resources.
+This project demonstrates a real-time data pipeline that extracts COVID-19 data from a public API, stores it in AWS S3, and loads it into Snowflake for analytics, built entirely using free-tier resources.
 
 ---
 
 ## Problem Statement
 
-Automate the ingestion of daily COVID-19 data from a public API, store the raw data in Amazon S3, and load it into a Snowflake cloud data warehouse for querying and analytics.
+Automate the ingestion of daily COVID-19 data for all countries from a public API, store the raw data in Amazon S3, and load it into a Snowflake cloud data warehouse for querying and analytics.
 
 ---
 
@@ -42,7 +42,7 @@ covid_data_pipeline/
 
 ## Pipeline Steps
 
-1. **Extract**: Pull multi-country COVID-19 data via public API
+1. **Extract**: Pull real-time COVID-19 data for 200+ countries using a public API
 2. **Transform**: Normalize and flatten JSON into tabular format (via pandas)
 3. **Store**: Save data to `covid_countries_data.csv`
 4. **Upload**: Push CSV to AWS S3 (`raw_data/` folder)
@@ -64,6 +64,8 @@ SELECT
 FROM covid_by_country
 ORDER BY cases DESC
 LIMIT 10;
+
+---
 
 ---
 
@@ -90,10 +92,11 @@ For production, consider switching to role-based access or Snowflake external st
 ---
 
 ## What I Learned
-Working with REST APIs and JSON normalization
+Working with REST APIs and Normalizing nested JSON data for multiple entities (countries)
 
 Staging and transforming data in Snowflake
 
 Integrating cloud services into reproducible pipelines
 
 Preparing clean, query-ready datasets for downstream use
+
