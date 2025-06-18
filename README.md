@@ -65,6 +65,7 @@ FROM covid_by_country
 ORDER BY cases DESC
 LIMIT 10;
 
+```
 
 
 ## Sample Output
