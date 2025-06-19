@@ -1,0 +1,29 @@
+[2025-06-19T02:52:03.861-0400] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-06-19T02:52:03.875-0400] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: covid_data_pipeline.extract_covid_data manual__2025-06-19T06:52:00.650756+00:00 [queued]>
+[2025-06-19T02:52:03.880-0400] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: covid_data_pipeline.extract_covid_data manual__2025-06-19T06:52:00.650756+00:00 [queued]>
+[2025-06-19T02:52:03.881-0400] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-06-19T02:52:03.893-0400] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): extract_covid_data> on 2025-06-19 06:52:00.650756+00:00
+[2025-06-19T02:52:03.898-0400] {standard_task_runner.py:72} INFO - Started process 13501 to run task
+[2025-06-19T02:52:03.901-0400] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'covid_data_pipeline', 'extract_covid_data', 'manual__2025-06-19T06:52:00.650756+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/covid_pipeline_dag.py', '--cfg-path', '/tmp/tmpnvuc59yn']
+[2025-06-19T02:52:03.902-0400] {standard_task_runner.py:105} INFO - Job 17: Subtask extract_covid_data
+[2025-06-19T02:52:03.959-0400] {task_command.py:467} INFO - Running <TaskInstance: covid_data_pipeline.extract_covid_data manual__2025-06-19T06:52:00.650756+00:00 [running]> on host manasajagati.localdomain
+[2025-06-19T02:52:04.034-0400] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='manasa' AIRFLOW_CTX_DAG_ID='covid_data_pipeline' AIRFLOW_CTX_TASK_ID='extract_covid_data' AIRFLOW_CTX_EXECUTION_DATE='2025-06-19T06:52:00.650756+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-19T06:52:00.650756+00:00'
+[2025-06-19T02:52:04.035-0400] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-06-19T02:52:04.035-0400] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-06-19T02:52:04.035-0400] {logging_mixin.py:190} INFO - Current task name:extract_covid_data state:running start_date:2025-06-19 06:52:03.875570+00:00
+[2025-06-19T02:52:04.035-0400] {logging_mixin.py:190} INFO - Dag name:covid_data_pipeline and current dag run status:running
+[2025-06-19T02:52:04.036-0400] {taskinstance.py:731} INFO - ::endgroup::
+[2025-06-19T02:52:04.036-0400] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-06-19T02:52:04.037-0400] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 ~/covid_data_pipeline/scripts/extract_covid_data.py']
+[2025-06-19T02:52:04.048-0400] {subprocess.py:99} INFO - Output:
+[2025-06-19T02:52:05.338-0400] {subprocess.py:106} INFO - Saved 231 rows to data/covid_countries_data.csv
+[2025-06-19T02:52:05.392-0400] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-06-19T02:52:05.412-0400] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-06-19T02:52:05.413-0400] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=covid_data_pipeline, task_id=extract_covid_data, run_id=manual__2025-06-19T06:52:00.650756+00:00, execution_date=20250619T065200, start_date=20250619T065203, end_date=20250619T065205
+[2025-06-19T02:52:05.425-0400] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-06-19T02:52:05.426-0400] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-06-19T02:52:05.426-0400] {logging_mixin.py:190} INFO - Dag name:covid_data_pipeline queued_at:2025-06-19 06:52:00.682372+00:00
+[2025-06-19T02:52:05.426-0400] {logging_mixin.py:190} INFO - Task hostname:manasajagati.localdomain operator:BashOperator
+[2025-06-19T02:52:05.452-0400] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-06-19T02:52:05.499-0400] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-19T02:52:05.505-0400] {local_task_job_runner.py:245} INFO - ::endgroup::
