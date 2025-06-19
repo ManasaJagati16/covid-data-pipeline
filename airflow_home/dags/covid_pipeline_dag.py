@@ -11,7 +11,7 @@ default_args = {
 with DAG(
     dag_id='covid_data_pipeline',
     default_args=default_args,
-    schedule_interval='@daily',
+    schedule_interval='@hourly',
     catchup=False,
     description='ETL pipeline to extract COVID data, upload to S3 and load to Snowflake',
     tags=['covid', 'ETL', 's3', 'snowflake']
